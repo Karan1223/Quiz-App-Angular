@@ -1,0 +1,107 @@
+<!-- quiz.component.html -->
+<div class="bg-black min-h-screen flex items-center justify-center">
+    <div *ngIf="question">
+       
+        <div class="mb-4 flex items-center">
+            <label for="categorySelect" class="text-white mr-2">Select Category:</label>
+            <select [(ngModel)]="selectedCategory" class="px-2 py-1 border rounded-md bg-white text-gray-800">
+              <option *ngFor="let category of category" [value]="category">{{ category }}</option>
+              <!-- Add more category options as needed -->
+            </select>
+          
+            <label for="difficultyLevel" class="text-white mr-2 pl-8">Difficulty Level:</label>
+            <select [(ngModel)]="difficultyLevel" class="px-2 py-1 border rounded-md bg-white text-gray-800">
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+              <!-- Add more difficulty level options as needed -->
+            </select>
+          
+            <button (click)="submitFilter()" class="bg-blue-500 text-white px-7 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-1 ml-9">
+              Filter
+            </button>
+            <button (click)="Clear()" class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-1 ml-9">
+                Clear Filter
+              </button>
+          </div>
+          
+          <div *ngFor="let question of question; let i = index" class="my-4 p-4 border rounded-lg shadow-md bg-white">
+            <h2 class="text-2xl font-semibold text-gray-900">Q{{ i + 1 }}. {{ question.questionTitle }}</h2>
+            
+            <div class="relative">
+              <div class="cursor-pointer text-blue-500 hover:text-blue-600" (click)="toggleHint(question.id, question.hint)">
+                <fa-icon [icon]="faQuestionCircle"></fa-icon>
+              </div>
+              
+              <div
+                *ngIf="displayHint && selectedQuestionId === question.id"
+                class="hint-box absolute left-0 mt-2 w-64 bg-white text-black p-2 border rounded-lg z-10 shadow-md"
+              >
+                {{ question.hint }}
+              </div>
+            </div>
+            
+          
+      
+        <ul class="mt-2">
+          <li class="mt-2">
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                name="quizOption{{ question.id }}"
+                [value]="question.option1"
+                [(ngModel)]="selectedOptions[question.id]"
+                class="mr-2 text-blue-400"
+              />
+              <span class="text-blue-400">{{ question.option1 }}</span>
+            </label>
+          </li>
+          <li class="mt-2">
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                name="quizOption{{ question.id }}"
+                [value]="question.option2"
+                [(ngModel)]="selectedOptions[question.id]"
+                class="mr-2 text-yellow-400"
+              />
+              <span class="text-yellow-400">{{ question.option2 }}</span>
+            </label>
+          </li>
+          <li class="mt-2">
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                name="quizOption{{ question.id }}"
+                [value]="question.option3"
+                [(ngModel)]="selectedOptions[question.id]"
+                class="mr-2 text-green-400"
+              />
+              <span class="text-green-400">{{ question.option3 }}</span>
+            </label>
+          </li>
+          <li class="mt-2">
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                name="quizOption{{ question.id }}"
+                [value]="question.option4"
+                [(ngModel)]="selectedOptions[question.id]"
+                class="mr-2 text-pink-400"
+              />
+              <span class="text-pink-400">{{ question.option4 }}</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!questionsAvailable" class="text-center mt-4">
+        <h2 class="text-white text-lg font-semibold">No question available. Clear or change filter.</h2>
+      </div>
+            
+      <button (click)="submitAnswer()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-4">
+        Submit
+      </button>
+    </div>
+    
+  </div>
+  
