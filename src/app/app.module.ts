@@ -8,13 +8,17 @@ import { QuizComponent } from './Component/quiz/quiz.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultComponent } from './Component/result/result.component';
+import { QuestionComponent } from './Component/question/question.component';
+import { NavbarComponent } from './Component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     QuizComponent,
-    ResultComponent
+    ResultComponent,
+    QuestionComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

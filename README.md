@@ -1,13 +1,5 @@
 # FrontendQuizApp
 
-This is Frontend for Quiz-Application. It has MCQ questions and the backend was created in SpringBoot and the database used was PostgreSQL.
-
-## Features
-MCQ Questions.
-Browse questions using category and difficulty level.
-Icon to show and hide hints.
-Shows the percentage you got after the quiz and the correct answers for all the wrong questions at the end.
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
 ## Development server

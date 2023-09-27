@@ -1,0 +1,49 @@
+<div class="container mx-auto p-4 bg-white rounded shadow-lg">
+    <form (ngSubmit)="onSubmit()" #questionForm="ngForm">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="questionTitle">Question Title</label>
+        <input type="text" id="questionTitle" name="questionTitle" [(ngModel)]="formData.questionTitle" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="option1">Option 1</label>
+        <input type="text" id="option1" name="option1" [(ngModel)]="formData.option1" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="option2">Option 2</label>
+        <input type="text" id="option2" name="option2" [(ngModel)]="formData.option2" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="option3">Option 3</label>
+        <input type="text" id="option3" name="option3" [(ngModel)]="formData.option3" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="option4">Option 4</label>
+        <input type="text" id="option4" name="option4" [(ngModel)]="formData.option4" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="correctAnswer">Correct Answer</label>
+        <input type="text" id="correctAnswer" name="correctAnswer" [(ngModel)]="formData.correctAnswer" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="difficultyLevel">Difficulty Level</label>
+        <select id="difficultyLevel" name="difficultyLevel" [(ngModel)]="formData.difficultyLevel" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+          <option value="" disabled>Select Difficulty Level</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="category">Category</label>
+        <input type="text" id="category" name="category" [(ngModel)]="formData.category" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="hint">Hint</label>
+        <textarea id="hint" name="hint" [(ngModel)]="formData.hint" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Submit</button>
+      </div>
+    </form>
+  </div>
+  
